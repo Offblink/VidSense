@@ -165,14 +165,6 @@ CLIP 与 faster-whisper 均为**冻结预训练权重**，配合**固定预处�
 
 ---
 
-## ⚠️ 限制与后续
-
-- 未做：HTTP API 端点、语义检索 / 问答、说话人分离（pyannote）。
-- B站无字幕源转写仍走本地 faster-whisper（不依赖百度 ASR key）。
-- 长视频抽帧按 `VU_FPS`，发送给模型的关键帧默认 ≤ 12 张以控制 token。
-
----
-
 ## 📄 License
 
 MIT License
