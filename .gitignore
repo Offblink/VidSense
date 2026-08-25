@@ -1,0 +1,5 @@
+# 本地密钥/产物，不入库
+.env
+output/
+*.pyc
+__pycache__/
