@@ -136,20 +136,8 @@ export DEEPSEEK_API_KEY=sk-...
 | `VU_CLIP_MODEL` | `openai/clip-vit-base-patch32` | CLIP 模型 |
 | `VU_ASR_MODEL` | `small` | faster-whisper 模型尺寸 |
 | `VU_ASR_LANG` | 自动 | 强制语言（如 `zh`） |
-| `VU_ASR_COMPUTE` | `int8` | 计算精度（固定以保两机一致） |
+| `VU_ASR_COMPUTE` | `int8` | 计算精度 |
 | `VU_CUT` | `0.85` | 场景切分的帧间相似度阈值 |
-
----
-
-## 🖥️ 跨机一致性（重要）
-
-CLIP 与 faster-whisper 均为**冻结预训练权重**，配合**固定预处理常量**（抽帧 fps、resize、`compute_type=int8`、阈值）与**设备自适应**（有 cuda 用 GPU，否则 CPU）：
-
-> **两台机器输出一致，仅速度不同。**
-
-- CPU/GPU 的浮点微差（~1e-6）远小于判定阈值余量，不会翻转场景切分/关键帧选择。
-- 因此：在本机（无独显）验证过的结果，在独显那台用**同一份代码、同一条命令**会得到**相同内容**，只是更快。
-- ⚠️ 前提：独显那台也需装依赖、拉权重；若装的是 CPU 版 torch，会静默用 CPU（结果仍对，只是没用上 GPU）。
 
 ---
 
