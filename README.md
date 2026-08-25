@@ -43,7 +43,7 @@
 
 | 模块 | 作用 |
 |---|---|
-| `config.py` | 集中配置（模型/fps/阈值/API），支持 `.env`，保证跨机一致 |
+| `config.py` | 集中配置（模型/fps/阈值/API），支持 `.env` |
 | `schema.py` | 事件卡数据结构（EventCard / Segment / Keyframe / Scene / Word） |
 | `ingest.py` | ffmpeg 抽音频 + cv2 高效抽帧 + 时长元数据 |
 | `transcribe.py` | faster-whisper → 带词级时间戳的分段 |
