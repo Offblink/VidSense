@@ -175,4 +175,4 @@ CLIP 与 faster-whisper 均为**冻结预训练权重**，配合**固定预处�
 
 ## 📄 License
 
-（未指定）
+MIT License
