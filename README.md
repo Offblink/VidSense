@@ -1,4 +1,4 @@
-# VidSense — 视频理解应用
+# VidSense
 
 抽音轨转写 + CLIP 关键帧 → VLM 理解视频内容。
 
