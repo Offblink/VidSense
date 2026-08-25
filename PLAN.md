@@ -13,7 +13,7 @@
 ```
 video-understanding/
   DESIGN.md  PLAN.md  requirements.txt
-  vunderstand/
+  vidsense/
     __init__.py
     config.py        # 集中常量/API 配置        [done]
     schema.py        # 事件卡数据结构            [done]
@@ -33,7 +33,7 @@ video-understanding/
 4. `transcribe.py`：faster-whisper → segments（支持中文，自动语言）
 5. `cards.py`：按时间戳对齐两轴 → EventCard（grounding context）
 6. `api_client.py`：DeepSeek 视觉调用（OpenAI 兼容，transcript+事件卡+关键帧图）
-7. `cli.py`：端到端 `python -m vunderstand.cli <video>` → 输出结构化内容
+7. `cli.py`：端到端 `python -m vidsense.cli <video>` → 输出结构化内容
 8. 阶段2：URL(yt-dlp)、HTTP端点、语义检索
 
 ## 执行策略

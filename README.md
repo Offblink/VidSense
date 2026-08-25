@@ -1,4 +1,8 @@
-# 视频理解应用 (Video Understanding App)
+# VidSense — 视频理解应用
+
+抽音轨转写 + CLIP 关键帧 → VLM 理解视频内容。
+
+把一段视频变成**可理解的内容**：输入一个视频文件或 B站链接，应用先用本地管线「听懂 + 看懂」建立事实依据（faster-whisper 语音转写 + CLIP 关键帧），再糅合两者交由视觉大模型（VLM）理解，**返回这段视频的结构化内容**（整体摘要 / 时间轴 / 主题与关键信息）。
 
 把一段视频变成**可理解的内容**：输入一个视频文件或 B站链接，应用先用本地管线「听懂 + 看懂」建立事实依据（语音转写 + CLIP 关键帧），再调用视觉大模型，**返回这段视频的结构化内容理解**（整体摘要 / 时间轴 / 主题与关键信息）。
 
@@ -35,7 +39,7 @@
    结构化视频内容理解 (摘要 / 时间轴 / 主题关键信息)
 ```
 
-### 模块（`vunderstand/`）
+### 模块（`vidsense/`）
 
 | 模块 | 作用 |
 |---|---|
@@ -71,19 +75,19 @@ pip install torch transformers faster-whisper opencv-python numpy requests
 
 ```bash
 # 本地文件
-python -m vunderstand.cli 视频.mp4
+python -m vidsense.cli 视频.mp4
 
 # B站 URL（自动下载）
-python -m vunderstand.cli "https://www.bilibili.com/video/BV1YE8b6mEmc/"
+python -m vidsense.cli "https://www.bilibili.com/video/BV1YE8b6mEmc/"
 
 # 只跑本地管线（不调 LLM）—— 无需 API key
-python -m vunderstand.cli 视频.mp4 --no-api
+python -m vidsense.cli 视频.mp4 --no-api
 
 # 不发送关键帧图（更省 token / 更快）
-python -m vunderstand.cli 视频.mp4 --no-images
+python -m vidsense.cli 视频.mp4 --no-images
 
 # 输出结构化 JSON
-python -m vunderstand.cli 视频.mp4 --json
+python -m vidsense.cli 视频.mp4 --json
 ```
 
 **示例输出**（`BV1YE8b6mEmc`，小女孩偷开爸爸车的搞笑视频）：

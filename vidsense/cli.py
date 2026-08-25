@@ -1,4 +1,4 @@
-"""CLI: python -m vunderstand.cli <video_or_url> [--no-images] [--json] [--no-api]
+"""CLI: python -m vidsense.cli <video_or_url> [--no-images] [--json] [--no-api]
 
 --no-api 只跑本地管线(不调 LLM), 用于无 key 时验证。
 """
